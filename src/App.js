@@ -1,25 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from "./components/Header";
+import Content from "./components/Content";
+import Footer from "./components/Footer";
+import React, {useState} from "react";
+import DialogComponent from "./components/common/DialogComponent";
+import CreateAccountView from "./components/account/CreateAccountModal";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+const App = () => {
+
+    const [isOpen, setIsOpen] = useState(false);
+
+    const handleCloseModal = () => {
+        setIsOpen(false)
+    }
+
+    return (
+        <div className="App">
+            <Header isLoginOpen={setIsOpen}/>
+            <Content/>
+            <Footer/>
+            {isOpen &&
+                <DialogComponent open={isOpen} title={"Create New Account"} handleClose={handleCloseModal}>
+                    <CreateAccountView/>
+                </DialogComponent>
+            }
+        </div>
+    );
 }
 
 export default App;
