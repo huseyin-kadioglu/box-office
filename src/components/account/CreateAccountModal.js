@@ -6,7 +6,9 @@ const CreateAccountView = (props) => {
         <div>
             <p>Email Adress</p>
             <input type={"text"}/>
-            <p>PASSWORD</p>
+            <p>Username</p>
+            <input type={"text"}/>
+            <p>Password</p>
             <input type={"text"}/>
         </div>
     );

@@ -21,7 +21,7 @@ const App = () => {
             <Content/>
             <Footer/>
             {isOpen &&
-                <DialogComponent open={isOpen} title={"Create New Account"} handleClose={handleCloseModal}>
+                <DialogComponent open={isOpen} title={"Join"} handleClose={handleCloseModal}>
                     <CreateAccountView/>
                 </DialogComponent>
             }

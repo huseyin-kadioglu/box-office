@@ -1,18 +1,22 @@
-import {Button, Dialog, DialogActions, DialogContent, DialogTitle} from "@mui/material";
+import {Box, Button, Dialog, DialogActions, DialogContent, DialogTitle, IconButton} from "@mui/material";
+import CloseIcon from '@material-ui/icons/Close'
+
 
 const DialogComponent = ({open, title, children, handleClose, action}) => {
 
     return (
         <Dialog open={open}>
             <DialogTitle id="alert-dialog-title">
-                {title}
+                <Box display="flex" alignItems="center">
+                    <Box flexGrow={1}>{title}</Box>
+                    <Box><IconButton onClick={handleClose}><CloseIcon/></IconButton></Box>
+                </Box>
             </DialogTitle>
             <DialogContent>
                 {children}
             </DialogContent>
             <DialogActions>
-                <Button onClick={handleClose}>ÜYE OL</Button>
-                <Button onClick={handleClose} autoFocus>ÇIKIŞ YAP</Button>
+                <Button onClick={handleClose} variant="outlined">ÜYE OL</Button>
             </DialogActions>
         </Dialog>
     );
