@@ -3,14 +3,12 @@ import CloseIcon from '@material-ui/icons/Close'
 import UserService from "../../service/UserService";
 
 
-const DialogComponent = ({open, title, children, handleClose}) => {
+const DialogComponent = ({open, title, children, handleClose, user}) => {
 
     const serviceCall = () => {
-        UserService.createUser({
-            email: "huseyinavnikadioglu@gmail.com",
-            username: "faux",
-            password: "h3ll0w0rld"
-        });
+        UserService.createUser(user);
+
+        // UserService.getUser().then(response => console.log(response)).catch(e => console.log(e));
     };
 
     return (
@@ -27,7 +25,7 @@ const DialogComponent = ({open, title, children, handleClose}) => {
             <DialogTitle id="alert-dialog-title">
                 <Box display="flex" alignItems="center">
                     <Box flexGrow={1}>{title}</Box>
-                    <Box><IconButton onClick={handleClose} style={{color: "red"}}><CloseIcon/></IconButton></Box>
+                    <Box><IconButton onClick={handleClose}><CloseIcon/></IconButton></Box>
                 </Box>
             </DialogTitle>
             <DialogContent>

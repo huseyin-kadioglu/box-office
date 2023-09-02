@@ -1,11 +1,15 @@
 import React, {useEffect, useState} from "react";
 import TitleAndInputComponent from "../common/TitleAndInputComponent";
 
-const CreateAccountView = ({}) => {
+const CreateAccountView = ({setUser}) => {
 
     const [emailAdress, setEmailAdress] = useState("");
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+
+    useEffect(() => {
+        setUser({email: emailAdress, username: username, password: password})
+    }, [emailAdress, username, password, setUser]);
 
     return (
         <>
@@ -15,8 +19,6 @@ const CreateAccountView = ({}) => {
                                     onChange={e => setUsername(e.target.value)}/>
             <TitleAndInputComponent title={"Password"}
                                     onChange={e => setPassword(e.target.value)}/>
-
-            <p>Email Adress: {emailAdress}, Username: {username}, Password: {password}</p>
         </>
     );
 };

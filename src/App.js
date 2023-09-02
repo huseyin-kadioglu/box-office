@@ -10,6 +10,7 @@ import CreateAccountView from "./components/account/CreateAccountModal";
 const App = () => {
 
     const [isOpen, setIsOpen] = useState(false);
+    const [user, setUser] = useState(null)
 
     const handleCloseModal = () => {
         setIsOpen(false)
@@ -21,8 +22,8 @@ const App = () => {
             <Content/>
             <Footer/>
             {isOpen &&
-                <DialogComponent open={isOpen} title={"Join"} handleClose={handleCloseModal}>
-                    <CreateAccountView/>
+                <DialogComponent open={isOpen} title={"Join"} handleClose={handleCloseModal} user={user}>
+                    <CreateAccountView setUser={setUser}/>
                 </DialogComponent>
             }
         </div>
