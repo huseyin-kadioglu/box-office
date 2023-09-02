@@ -6,6 +6,19 @@ body {
     background: dimgray;
 }
 
+.navbar_items {
+    color: #fff;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: darkslategray;
+    font-family: Graphik-Semibold-Web, sans-serif;
+    letter-spacing: .07692308em;
+    line-height: 17px;
+    text-transform: uppercase;
+}
+
 .content {
     flex-grow: 1;
     height: 750px;
@@ -22,32 +35,46 @@ body {
     align-items: center;
     justify-content: center;
     background: darkslategray;
+    font-family: Graphik-Semibold-Web, sans-serif;
+    letter-spacing: .07692308em;
+    line-height: 17px;
+    text-transform: uppercase;
 }
 
-.header div {
+.header span {
     margin-left: 40px;
+    color: lightgray;
+}
+
+.header span:hover {
+    margin-left: 40px;
+    color: white;
+    cursor: pointer;
 }
 
 .header .site-logo {
     padding: 20px;
-    border: 1px solid black;
 }
 
-.header .main-nav {
+.header .films {
     padding: 20px;
-    border: 1px solid black;
 }
 
 .header .create-account {
     padding: 20px;
-    border: 1px solid black;
+    color: #d8e1e9ff;
+    cursor: pointer;
+}
+
+.header .create-account:hover {
+    color: white;
+    cursor: pointer;
 }
 
 .header .login {
     color: white;
     background: green;
     padding: 20px;
-    border: 1px solid black;
 }
 
 .footer {

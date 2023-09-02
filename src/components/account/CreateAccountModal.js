@@ -1,16 +1,23 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
+import TitleAndInputComponent from "../common/TitleAndInputComponent";
 
-const CreateAccountView = (props) => {
+const CreateAccountView = ({}) => {
+
+    const [emailAdress, setEmailAdress] = useState("");
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
 
     return (
-        <div>
-            <p>Email Adress</p>
-            <input type={"text"}/>
-            <p>Username</p>
-            <input type={"text"}/>
-            <p>Password</p>
-            <input type={"text"}/>
-        </div>
+        <>
+            <TitleAndInputComponent title={"Email Adress"}
+                                    onChange={e => setEmailAdress(e.target.value)}/>
+            <TitleAndInputComponent title={"Username"}
+                                    onChange={e => setUsername(e.target.value)}/>
+            <TitleAndInputComponent title={"Password"}
+                                    onChange={e => setPassword(e.target.value)}/>
+
+            <p>Email Adress: {emailAdress}, Username: {username}, Password: {password}</p>
+        </>
     );
 };
 export default CreateAccountView;

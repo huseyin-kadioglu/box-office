@@ -6,7 +6,7 @@ const CreateAccount = (props) => {
 
     return (
         <div className={"create-account"} onClick={handleOnClick}>
-            CREATE AN ACCOUNT
+            CREATE ACCOUNT
         </div>
     );
 
