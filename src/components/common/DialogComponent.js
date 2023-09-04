@@ -3,36 +3,43 @@ import CloseIcon from '@material-ui/icons/Close'
 import UserService from "../../service/UserService";
 
 
-const DialogComponent = ({open, title, children, handleClose, user}) => {
+const DialogComponent = ({open, title, children, handleClose, user, setLoginScreen}) => {
 
     const serviceCall = () => {
         UserService.createUser(user);
-
         // UserService.getUser().then(response => console.log(response)).catch(e => console.log(e));
     };
 
-    return (
-        <Dialog open={open}
+    const redirectLogin = () => {
+        // setLoginScreen(true);
+    }
 
-                PaperProps={{
-                    style: {
-                        margin: '20px',
-                        height: '50vh',
-                        width: '21vw',
-                    },
-                }}
-        >
+    return (
+        <Dialog open={open}>
             <DialogTitle id="alert-dialog-title">
                 <Box display="flex" alignItems="center">
                     <Box flexGrow={1}>{title}</Box>
-                    <Box><IconButton onClick={handleClose}><CloseIcon/></IconButton></Box>
+                    <Box>
+                        <IconButton onClick={handleClose}>
+                            <CloseIcon fontSize="small"/>
+                        </IconButton>
+                    </Box>
                 </Box>
             </DialogTitle>
-            <DialogContent>
+            <DialogContent PaperProps={{
+                style: {
+                    margin: '20px',
+                    height: '50vh',
+                    width: '15vw',
+                    alignItems: 'center'
+                },
+            }}>
                 {children}
             </DialogContent>
-            <DialogActions>
-                <Button onClick={serviceCall} variant="outlined">ÜYE OL</Button>
+            <DialogActions style={{margin: '20px', display: 'block', alignItems: 'center'}}>
+                <Button onClick={serviceCall} variant="outlined">Hesap Oluştur</Button>
+                <p>veya Hesabın varsa </p>
+                <Button onClick={redirectLogin} variant="outlined">Giriş Yap</Button>
             </DialogActions>
         </Dialog>
     );

@@ -1,10 +1,11 @@
 const TitleAndInputComponent = ({title, type = "text", onChange}) => {
 
     return (
-        <div style={{marginBottom: "10px"}}>
-            <h4>{title}</h4>
+        <div //style={{marginBottom: "10px"}}
+        >
+            <p>{title}</p>
             <input type={"email"}
-                   style={{borderRadius: '4px'}}
+                // style={{borderRadius: '4px'}}
                    onChange={onChange}/>
         </div>
     );

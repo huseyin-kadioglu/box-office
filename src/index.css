@@ -1,53 +1,38 @@
 body {
     display: flex;
-    height: 100%;
     flex-direction: column;
     margin: 0;
     background: dimgray;
 }
 
 .navbar_items {
-    color: #fff;
     height: 72px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: darkslategray;
-    font-family: Graphik-Semibold-Web, sans-serif;
-    letter-spacing: .07692308em;
-    line-height: 17px;
-    text-transform: uppercase;
 }
 
 .content {
     flex-grow: 1;
-    height: 750px;
     overflow: auto;
-    background: dimgray;
     padding-left: 50px;
     padding-right: 50px;
 }
 
 .header {
-    color: #fff;
     height: 72px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    background: darkslategray;
-    font-family: Graphik-Semibold-Web, sans-serif;
-    letter-spacing: .07692308em;
-    line-height: 17px;
-    text-transform: uppercase;
+    /*  align-items: center;*/
+    /*justify-content: center;*/
 }
 
 .header span {
-    margin-left: 40px;
+    /* margin-left: 40px;*/
     color: lightgray;
 }
 
 .header span:hover {
-    margin-left: 40px;
+    /*margin-left: 40px;*/
     color: white;
     cursor: pointer;
 }
@@ -73,13 +58,14 @@ body {
 
 .header .login {
     color: white;
-    background: green;
+    background: slategray;
     padding: 20px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
 }
 
 .footer {
-    background-color: #ccc;
-    color: #fff;
     height: 50px;
     display: flex;
     align-items: center;

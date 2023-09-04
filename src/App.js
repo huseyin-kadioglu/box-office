@@ -22,7 +22,7 @@ const App = () => {
             <Content/>
             <Footer/>
             {isOpen &&
-                <DialogComponent open={isOpen} title={"Join"} handleClose={handleCloseModal} user={user}>
+                <DialogComponent open={isOpen} handleClose={handleCloseModal} user={user}>
                     <CreateAccountView setUser={setUser}/>
                 </DialogComponent>
             }
